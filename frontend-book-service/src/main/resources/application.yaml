@@ -1,0 +1,7 @@
+server:
+  servlet:
+    context-path: /frontend
+
+feign:
+  hystrix:
+    enabled: false
