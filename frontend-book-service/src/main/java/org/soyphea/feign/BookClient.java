@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-@FeignClient(name = "book", value = "book",url = "http://localhost:9999"
+@FeignClient(name = "book", value = "book",url = "${book.baseUrl}"
         , fallbackFactory = BookFallbackFactory.class
 )
 public interface BookClient {
