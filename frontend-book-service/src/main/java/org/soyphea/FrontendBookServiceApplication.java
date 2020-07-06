@@ -9,7 +9,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-@EnableFeignClients
+@EnableFeignClients({"org.soyphea.feign"})
 @Slf4j
 public class FrontendBookServiceApplication {
 

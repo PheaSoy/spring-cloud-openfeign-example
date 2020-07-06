@@ -1,5 +1,7 @@
-package org.soyphea;
+package org.soyphea.feign;
 
+import org.soyphea.Book;
+import org.soyphea.BookFallbackFactory;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

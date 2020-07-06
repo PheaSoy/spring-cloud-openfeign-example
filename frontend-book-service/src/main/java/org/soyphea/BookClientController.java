@@ -1,7 +1,7 @@
 package org.soyphea;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.soyphea.feign.BookClient;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -16,13 +16,19 @@ public class BookClientController {
     }
 
     @GetMapping("/books/{id}")
-    public Book findBookById(@PathVariable String id) throws Exception{
+    public ApiResponse<Book> findBookById(@PathVariable String id) throws Exception{
         log.info("Start search book with id:{}",id);
-        return bookClient.getBookById(id);
+        Book book= bookClient.getBookById(id);
+        ApiResponse apiResponse = ApiResponse.success();
+        apiResponse.setBody(book);
+        return apiResponse;
     }
 
     @PostMapping("/books")
-    public Book addBook(@RequestBody Book book) throws Exception{
-        return bookClient.createBook(book);
+    public ApiResponse<Book> addBook(@RequestBody Book book) throws Exception{
+        Book bookResponse= bookClient.createBook(book);
+        ApiResponse apiResponse = ApiResponse.success();
+        apiResponse.setBody(bookResponse);
+        return apiResponse;
     }
 }
