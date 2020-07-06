@@ -12,12 +12,7 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class MyErrorDecoder implements ErrorDecoder {
 
-//    final Decoder decoder;
-//    final ErrorDecoder defaultDecoder = new ErrorDecoder.Default();
-//
-//    public MyErrorDecoder(Decoder decoder) {
-//        this.decoder = decoder;
-//    }
+   final ErrorDecoder defaultDecoder = new ErrorDecoder.Default();
 
     @Override
     public Exception decode(String s, Response response) {
@@ -25,7 +20,7 @@ public class MyErrorDecoder implements ErrorDecoder {
         try {
            return new BookClientException();
         }catch (Exception exception){
-            return exception;
+            return defaultDecoder.decode(s,response);
         }
 
     }

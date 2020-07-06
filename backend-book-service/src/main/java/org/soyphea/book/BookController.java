@@ -17,13 +17,13 @@ public class BookController {
     @GetMapping("/books/{id}")
     public Book findBookById(@PathVariable String id) throws Exception{
         log.info("Start search book with id=>{}",id);
-        Thread.sleep(10000);
+        Thread.sleep(2000);
         return bookService.findBookById(id);
     }
     @PostMapping("/books")
     public Book addBook(@RequestBody Book book) throws Exception{
         log.info("Start to create book with title=>{}",book.getTitle());
-        Thread.sleep(10000);
+        Thread.sleep(2000);
         return bookService.saveBook(book);
     }
 }
