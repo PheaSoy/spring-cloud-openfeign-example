@@ -2,6 +2,7 @@ package org.soyphea;
 
 import lombok.*;
 
+import java.io.Serializable;
 import java.util.Date;
 
 @Data
@@ -10,10 +11,9 @@ import java.util.Date;
 @Builder
 @AllArgsConstructor
 @ToString
-public class Book {
+public class Book implements Serializable {
 
     String id;
-
     @NonNull
     String title;
     Date publishDate;

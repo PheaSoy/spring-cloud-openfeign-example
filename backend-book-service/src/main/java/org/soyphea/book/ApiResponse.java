@@ -1,4 +1,4 @@
-package org.soyphea;
+package org.soyphea.book;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;

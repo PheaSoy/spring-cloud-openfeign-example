@@ -13,7 +13,7 @@ public class BookConfiguration {
         return Logger.Level.BASIC;
     }
 
-    //@Bean
+    @Bean
     public Retryer retryer() {
         return new Retryer.Default();
     }
