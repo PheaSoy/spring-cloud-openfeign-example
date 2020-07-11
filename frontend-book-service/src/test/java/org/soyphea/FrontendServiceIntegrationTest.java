@@ -38,7 +38,7 @@ public class FrontendServiceIntegrationTest extends AbstractIntegrationTest{
     void test_search_book() {
         assertThat(testRestTemplate.getForEntity(urlBuilder()+"/api/books",String.class).getStatusCode()).isEqualTo(200);
     }
-    
+
     String urlBuilder(){
         return String.format("http://localhost:%d/frontend",port);
     }
